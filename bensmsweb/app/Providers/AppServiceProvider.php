@@ -13,7 +13,23 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(
+            \App\Http\Repositories\RoleRepositoryInterface::class,
+            \App\Http\Repositories\RoleRepository::class
+
+        );
+
+        $this->app->bind(
+            \App\Http\Repositories\SMSRepositoryInterface::class,
+            \App\Http\Repositories\SMSRepository::class
+
+        );
+
+        $this->app->bind(
+            \App\Http\Repositories\UserRepositoryInterface::class,
+            \App\Http\Repositories\UserRepository::class
+
+        );
     }
 
     /**

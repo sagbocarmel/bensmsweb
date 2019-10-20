@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\SmsSchool;
 use Illuminate\Http\Request;
 
 class SmsSchoolController extends Controller
@@ -13,16 +12,6 @@ class SmsSchoolController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
     {
         //
     }
@@ -41,21 +30,10 @@ class SmsSchoolController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\SmsSchool  $smsSchool
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(SmsSchool $smsSchool)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\SmsSchool  $smsSchool
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(SmsSchool $smsSchool)
+    public function show($id)
     {
         //
     }
@@ -64,10 +42,10 @@ class SmsSchoolController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\SmsSchool  $smsSchool
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SmsSchool $smsSchool)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +53,10 @@ class SmsSchoolController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\SmsSchool  $smsSchool
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SmsSchool $smsSchool)
+    public function destroy($id)
     {
         //
     }

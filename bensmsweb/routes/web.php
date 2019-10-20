@@ -11,10 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('vue');
+//});
+
+//Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/{any?}', function (){
+    return view('vue');
+})->where('any', '[\/\w\.-]*');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');

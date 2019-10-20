@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="ben_sms_db@localhost">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.14">
+    <root id="1">
+      <ServerVersion>10.10</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="ben_sms_db">
+      <ObjectId>16526</ObjectId>
+      <StateNumber>608</StateNumber>
+      <Owner>postgres</Owner>
+      <IntrospectionStateNumber>626</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+      <Relations>sequence|table|16527|16529|1
+sequence|table|16535|16537|1
+sequence|table|16557|16559|1
+sequence|table|16569|16571|1
+sequence|table|16580|16582|1
+sequence|table|16598|16600|1
+sequence|table|16611|16613|1
+</Relations>
+    </database>
+    <database id="3" parent="1" name="micro_cea_user">
+      <ObjectId>16385</ObjectId>
+      <StateNumber>557</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="4" parent="1" name="postgres">
+      <ObjectId>13053</ObjectId>
+      <Comment>default administrative connection database</Comment>
+      <StateNumber>553</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="5" parent="1" name="test">
+      <ObjectId>16384</ObjectId>
+      <StateNumber>556</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <role id="6" parent="1" name="pg_monitor">
+      <ObjectId>3373</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="7" parent="1" name="pg_read_all_settings">
+      <ObjectId>3374</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="8" parent="1" name="pg_read_all_stats">
+      <ObjectId>3375</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="9" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="10" parent="1" name="pg_stat_scan_tables">
+      <ObjectId>3377</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="11" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="12" parent="2" name="information_schema">
+      <ObjectId>12762</ObjectId>
+      <StateNumber>353</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="13" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+      <Comment>system catalog schema</Comment>
+      <StateNumber>350</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="14" parent="2" name="pg_temp_1">
+      <ObjectId>11736</ObjectId>
+      <StateNumber>113</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="15" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+      <Comment>reserved schema for TOAST tables</Comment>
+      <StateNumber>1</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="16" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11737</ObjectId>
+      <StateNumber>113</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="17" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <Comment>standard public schema</Comment>
+      <StateNumber>351</StateNumber>
+      <Owner>postgres</Owner>
+      <IntrospectionStateNumber>627</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <access-method id="18" parent="2" name="btree">
+      <ObjectId>403</ObjectId>
+      <Comment>b-tree index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.bthandler</Handler>
+      <HandlerId>330</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="19" parent="2" name="hash">
+      <ObjectId>405</ObjectId>
+      <Comment>hash index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.hashhandler</Handler>
+      <HandlerId>331</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="20" parent="2" name="gist">
+      <ObjectId>783</ObjectId>
+      <Comment>GiST index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.gisthandler</Handler>
+      <HandlerId>332</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="21" parent="2" name="gin">
+      <ObjectId>2742</ObjectId>
+      <Comment>GIN index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.ginhandler</Handler>
+      <HandlerId>333</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="22" parent="2" name="spgist">
+      <ObjectId>4000</ObjectId>
+      <Comment>SP-GiST index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.spghandler</Handler>
+      <HandlerId>334</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="23" parent="2" name="brin">
+      <ObjectId>3580</ObjectId>
+      <Comment>block range index (BRIN) access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.brinhandler</Handler>
+      <HandlerId>335</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <extension id="24" parent="2" name="plpgsql">
+      <ObjectId>13039</ObjectId>
+      <Comment>PL/pgSQL procedural language</Comment>
+      <StateNumber>505</StateNumber>
+      <Version>1.0</Version>
+      <SchemaName>pg_catalog</SchemaName>
+      <SchemaId>11</SchemaId>
+    </extension>
+    <sequence id="25" parent="17" name="failed_jobs_id_seq">
+      <ObjectId>16557</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>616</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>bigint</DataType>
+    </sequence>
+    <sequence id="26" parent="17" name="migrations_id_seq">
+      <ObjectId>16527</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>611</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="27" parent="17" name="roles_id_seq">
+      <ObjectId>16598</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>622</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>bigint</DataType>
+    </sequence>
+    <sequence id="28" parent="17" name="s_m_s_s_id_seq">
+      <ObjectId>16569</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>618</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>bigint</DataType>
+    </sequence>
+    <sequence id="29" parent="17" name="sms_schools_id_seq">
+      <ObjectId>16580</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>620</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>bigint</DataType>
+    </sequence>
+    <sequence id="30" parent="17" name="user_roles_id_seq">
+      <ObjectId>16611</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>624</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>bigint</DataType>
+    </sequence>
+    <sequence id="31" parent="17" name="users_id_seq">
+      <ObjectId>16535</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>612</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>bigint</DataType>
+    </sequence>
+    <table id="32" parent="17" name="failed_jobs">
+      <ObjectId>16559</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>616</StateNumber>
+    </table>
+    <table id="33" parent="17" name="migrations">
+      <ObjectId>16529</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>611</StateNumber>
+    </table>
+    <table id="34" parent="17" name="password_resets">
+      <ObjectId>16550</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>614</StateNumber>
+    </table>
+    <table id="35" parent="17" name="roles">
+      <ObjectId>16600</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>624</StateNumber>
+    </table>
+    <table id="36" parent="17" name="s_m_s_s">
+      <ObjectId>16571</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>620</StateNumber>
+    </table>
+    <table id="37" parent="17" name="sms_schools">
+      <ObjectId>16582</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>620</StateNumber>
+    </table>
+    <table id="38" parent="17" name="user_roles">
+      <ObjectId>16613</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>624</StateNumber>
+    </table>
+    <table id="39" parent="17" name="users">
+      <ObjectId>16537</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>624</StateNumber>
+    </table>
+    <column id="40" parent="32" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>616</StateNumber>
+      <DefaultExpression>nextval(&apos;failed_jobs_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="41" parent="32" name="connection">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>616</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="42" parent="32" name="queue">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>616</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="43" parent="32" name="payload">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>616</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="44" parent="32" name="exception">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>616</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="45" parent="32" name="failed_at">
+      <Position>6</Position>
+      <DataType>timestamp(0)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>616</StateNumber>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="46" parent="32" name="failed_jobs_pkey">
+      <ObjectId>16567</ObjectId>
+      <StateNumber>616</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="47" parent="32" name="failed_jobs_pkey">
+      <ObjectId>16568</ObjectId>
+      <StateNumber>616</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>failed_jobs_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="48" parent="33" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>611</StateNumber>
+      <DefaultExpression>nextval(&apos;migrations_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="49" parent="33" name="migration">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>611</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="50" parent="33" name="batch">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>611</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="51" parent="33" name="migrations_pkey">
+      <ObjectId>16533</ObjectId>
+      <StateNumber>611</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="52" parent="33" name="migrations_pkey">
+      <ObjectId>16534</ObjectId>
+      <StateNumber>611</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>migrations_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="53" parent="34" name="email">
+      <Position>1</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>614</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="54" parent="34" name="token">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>614</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="55" parent="34" name="created_at">
+      <Position>3</Position>
+      <DataType>timestamp(0)|0s</DataType>
+      <StateNumber>614</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="56" parent="34" name="password_resets_email_index">
+      <ObjectId>16556</ObjectId>
+      <StateNumber>614</StateNumber>
+      <ColNames>email</ColNames>
+    </index>
+    <column id="57" parent="35" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>622</StateNumber>
+      <DefaultExpression>nextval(&apos;roles_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="58" parent="35" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>622</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="59" parent="35" name="description">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>622</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="60" parent="35" name="created_at">
+      <Position>4</Position>
+      <DataType>timestamp(0)|0s</DataType>
+      <StateNumber>622</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="61" parent="35" name="updated_at">
+      <Position>5</Position>
+      <DataType>timestamp(0)|0s</DataType>
+      <StateNumber>622</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="62" parent="35" name="roles_pkey">
+      <ObjectId>16607</ObjectId>
+      <StateNumber>622</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="63" parent="35" name="roles_name_unique">
+      <ObjectId>16609</ObjectId>
+      <StateNumber>622</StateNumber>
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="64" parent="35" name="roles_pkey">
+      <ObjectId>16608</ObjectId>
+      <StateNumber>622</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>roles_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="65" parent="35" name="roles_name_unique">
+      <ObjectId>16610</ObjectId>
+      <StateNumber>622</StateNumber>
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>roles_name_unique</UnderlyingIndexName>
+    </key>
+    <column id="66" parent="36" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>618</StateNumber>
+      <DefaultExpression>nextval(&apos;s_m_s_s_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="67" parent="36" name="sms_sender">
+      <Position>2</Position>
+      <DataType>varchar(15)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>618</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="68" parent="36" name="sms_receiver">
+      <Position>3</Position>
+      <DataType>varchar(15)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>618</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="69" parent="36" name="student_matricule">
+      <Position>4</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>618</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="70" parent="36" name="student_level">
+      <Position>5</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>618</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="71" parent="36" name="sms_value">
+      <Position>6</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>618</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="72" parent="36" name="sms_send_date">
+      <Position>7</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>618</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="73" parent="36" name="sms_send_time">
+      <Position>8</Position>
+      <DataType>time(0)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>618</StateNumber>
+      <TypeId>1083</TypeId>
+    </column>
+    <column id="74" parent="36" name="nbr_page_sms">
+      <Position>9</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>618</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="75" parent="36" name="sms_price">
+      <Position>10</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>618</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="76" parent="36" name="sms_state">
+      <Position>11</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>618</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="77" parent="36" name="created_at">
+      <Position>12</Position>
+      <DataType>timestamp(0)|0s</DataType>
+      <StateNumber>618</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="78" parent="36" name="updated_at">
+      <Position>13</Position>
+      <DataType>timestamp(0)|0s</DataType>
+      <StateNumber>618</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="79" parent="36" name="s_m_s_s_pkey">
+      <ObjectId>16578</ObjectId>
+      <StateNumber>618</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="80" parent="36" name="s_m_s_s_pkey">
+      <ObjectId>16579</ObjectId>
+      <StateNumber>618</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>s_m_s_s_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="81" parent="37" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>620</StateNumber>
+      <DefaultExpression>nextval(&apos;sms_schools_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="82" parent="37" name="id_sms">
+      <Position>2</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>620</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="83" parent="37" name="id_school">
+      <Position>3</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>620</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="84" parent="37" name="created_at">
+      <Position>4</Position>
+      <DataType>timestamp(0)|0s</DataType>
+      <StateNumber>620</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="85" parent="37" name="updated_at">
+      <Position>5</Position>
+      <DataType>timestamp(0)|0s</DataType>
+      <StateNumber>620</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="86" parent="37" name="sms_schools_pkey">
+      <ObjectId>16586</ObjectId>
+      <StateNumber>620</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="87" parent="37" name="sms_schools_pkey">
+      <ObjectId>16587</ObjectId>
+      <StateNumber>620</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>sms_schools_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="88" parent="37" name="sms_schools_id_sms_foreign">
+      <ObjectId>16588</ObjectId>
+      <StateNumber>620</StateNumber>
+      <ColNames>id_sms</ColNames>
+      <RefTableId>16571</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>s_m_s_s</RefTableName>
+      <RefKeyName>s_m_s_s_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="89" parent="37" name="sms_schools_id_school_foreign">
+      <ObjectId>16593</ObjectId>
+      <StateNumber>620</StateNumber>
+      <ColNames>id_school</ColNames>
+      <RefTableId>16537</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="90" parent="38" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>624</StateNumber>
+      <DefaultExpression>nextval(&apos;user_roles_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="91" parent="38" name="user_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>624</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="92" parent="38" name="role_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>624</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="93" parent="38" name="created_at">
+      <Position>4</Position>
+      <DataType>timestamp(0)|0s</DataType>
+      <StateNumber>624</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="94" parent="38" name="updated_at">
+      <Position>5</Position>
+      <DataType>timestamp(0)|0s</DataType>
+      <StateNumber>624</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="95" parent="38" name="user_roles_pkey">
+      <ObjectId>16617</ObjectId>
+      <StateNumber>624</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="96" parent="38" name="user_roles_pkey">
+      <ObjectId>16618</ObjectId>
+      <StateNumber>624</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>user_roles_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="97" parent="38" name="user_roles_user_id_foreign">
+      <ObjectId>16624</ObjectId>
+      <StateNumber>624</StateNumber>
+      <ColNames>user_id</ColNames>
+      <RefTableId>16537</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="98" parent="38" name="user_roles_role_id_foreign">
+      <ObjectId>16619</ObjectId>
+      <StateNumber>624</StateNumber>
+      <ColNames>role_id</ColNames>
+      <RefTableId>16600</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>roles</RefTableName>
+      <RefKeyName>roles_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="99" parent="39" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>612</StateNumber>
+      <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="100" parent="39" name="username">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>612</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="101" parent="39" name="email">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>612</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="102" parent="39" name="school_name">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>612</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="103" parent="39" name="address">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>612</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="104" parent="39" name="phone_number">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>612</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="105" parent="39" name="email_verified_at">
+      <Position>7</Position>
+      <DataType>timestamp(0)|0s</DataType>
+      <StateNumber>612</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="106" parent="39" name="password">
+      <Position>8</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>612</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="107" parent="39" name="remember_token">
+      <Position>9</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>612</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="108" parent="39" name="created_at">
+      <Position>10</Position>
+      <DataType>timestamp(0)|0s</DataType>
+      <StateNumber>612</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="109" parent="39" name="updated_at">
+      <Position>11</Position>
+      <DataType>timestamp(0)|0s</DataType>
+      <StateNumber>612</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="110" parent="39" name="users_pkey">
+      <ObjectId>16544</ObjectId>
+      <StateNumber>612</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="111" parent="39" name="users_username_unique">
+      <ObjectId>16546</ObjectId>
+      <StateNumber>612</StateNumber>
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="112" parent="39" name="users_email_unique">
+      <ObjectId>16548</ObjectId>
+      <StateNumber>612</StateNumber>
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="113" parent="39" name="users_pkey">
+      <ObjectId>16545</ObjectId>
+      <StateNumber>612</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="114" parent="39" name="users_username_unique">
+      <ObjectId>16547</ObjectId>
+      <StateNumber>612</StateNumber>
+      <ColNames>username</ColNames>
+      <UnderlyingIndexName>users_username_unique</UnderlyingIndexName>
+    </key>
+    <key id="115" parent="39" name="users_email_unique">
+      <ObjectId>16549</ObjectId>
+      <StateNumber>612</StateNumber>
+      <ColNames>email</ColNames>
+      <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>

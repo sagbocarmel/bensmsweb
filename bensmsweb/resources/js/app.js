@@ -3,10 +3,20 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
+import 'es6-promise/auto'
 require('./bootstrap');
+import Vue from 'vue';
+import BootstrapVue from 'bootstrap-vue'// Importing Vue Library
 
-window.Vue = require('vue');
+window.Vue = Vue;
+import VueRouter from 'vue-router'; // importing Vue router library
+import router from './router';
+
+Vue.use(VueRouter);
+Vue.use(BootstrapVue)
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 /**
  * The following block of code may be used to automatically register your
@@ -19,7 +29,7 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('index', require('./components/index.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -29,4 +39,5 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    router
 });

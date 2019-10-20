@@ -15,6 +15,10 @@ class CreateSmsSchoolsTable extends Migration
     {
         Schema::create('sms_schools', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('id_sms');
+            $table->unsignedBigInteger('id_school');
+            $table->foreign('id_sms')->on('s_m_s_s')->references('id');
+            $table->foreign('id_school')->on('users')->references('id');
             $table->timestamps();
         });
     }
