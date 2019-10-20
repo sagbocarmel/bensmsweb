@@ -2,10 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Repositories\RoleRepository;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
 {
+    protected $roleRepository;
+
+    /**
+     * RoleController constructor.
+     * @param $roleRepository
+     */
+    public function __construct(RoleRepository $roleRepository)
+    {
+        $this->roleRepository = $roleRepository;
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +26,20 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        if($this->roleRepository->findAll().isEmpty())
+        {
+            return response([
+                'success' => true,
+                'data' => null
+            ], 404);
+        }
+
+        return response()->json([
+            'success' => true,
+            'data' => [
+                'roles' => $this->roleRepository->findAll()
+            ]
+        ], 200);
     }
 
     /**
@@ -35,7 +61,20 @@ class RoleController extends Controller
      */
     public function show($id)
     {
-        //
+        if($this->roleRepository->find($id) == null)
+        {
+            return response([
+                'success' => true,
+                'data' => null
+            ], 404);
+        }
+
+        return response()->json([
+            'success' => true,
+            'data' => [
+                'role' => $this->roleRepository->find($id)
+            ]
+        ], 200);
     }
 
     /**
@@ -58,6 +97,8 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->roleRepository->delete($id);
+        return response()->json(['success' => true ,
+            'message' => 'Role supprimée avec succès'], 200);
     }
 }

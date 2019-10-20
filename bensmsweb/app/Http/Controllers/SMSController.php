@@ -2,10 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Repositories\SMSRepository;
 use Illuminate\Http\Request;
 
 class SMSController extends Controller
 {
+    protected $smsRepository;
+
+    /**
+     * SMSController constructor.
+     * @param $smsRepository
+     */
+    public function __construct(SMSRepository $smsRepository)
+    {
+        $this->smsRepository = $smsRepository;
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +26,20 @@ class SMSController extends Controller
      */
     public function index()
     {
-        //
+        if($this->smsRepository->findAll().isEmpty())
+        {
+            return response([
+                'success' => true,
+                'data' => null
+            ], 404);
+        }
+
+        return response()->json([
+            'success' => true,
+            'data' => [
+                'smss' => $this->smsRepository->findAll()
+            ]
+        ], 200);
     }
 
     /**
@@ -35,7 +61,20 @@ class SMSController extends Controller
      */
     public function show($id)
     {
-        //
+        if($this->smsRepository->find($id) == null)
+        {
+            return response([
+                'success' => true,
+                'data' => null
+            ], 404);
+        }
+
+        return response()->json([
+            'success' => true,
+            'data' => [
+                'sms' => $this->smsRepository->find($id)
+            ]
+        ], 200);
     }
 
     /**
@@ -58,6 +97,8 @@ class SMSController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->smsRepository->delete($id);
+        return response()->json(['success' => true ,
+            'message' => 'SMS supprimée avec succès'], 200);
     }
 }
