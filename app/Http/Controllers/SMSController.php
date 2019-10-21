@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Repositories\SMSRepository;
+use App\Http\Requests\SMSRequest;
 use Illuminate\Http\Request;
 
 class SMSController extends Controller
@@ -48,9 +49,16 @@ class SMSController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SMSRequest $request)
     {
-        //
+        $sms = $this->smsRepository->store($request->all());
+
+        return response()->json([
+            'success' => true,
+            'data' => [
+                'sms' => $sms
+            ]
+        ], 200);
     }
 
     /**
@@ -84,9 +92,16 @@ class SMSController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SMSRequest $request, $id)
     {
-        //
+        $sms = $this->smsRepository->update($id, $request->all());
+
+        return response()->json([
+            'success' => true,
+            'data' => [
+                'sms' => $sms
+            ]
+        ], 200);
     }
 
     /**

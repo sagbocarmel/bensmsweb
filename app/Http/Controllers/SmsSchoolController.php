@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Repositories\SMSRepository;
+use App\Http\Requests\SMSRequest;
 use Illuminate\Http\Request;
 
 class SmsSchoolController extends Controller
@@ -47,7 +48,7 @@ class SmsSchoolController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SMSRequest $request)
     {
         //
     }
@@ -70,9 +71,9 @@ class SmsSchoolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SMSRequest $request, $id)
     {
-        //
+
     }
 
     /**

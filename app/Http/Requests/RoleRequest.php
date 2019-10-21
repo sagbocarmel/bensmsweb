@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SmsSchoolRequest extends FormRequest
+class RoleRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,8 @@ class SmsSchoolRequest extends FormRequest
     public function rules()
     {
         return [
-
-            'sms_id' => 'required|integer',
-            'school_id' => 'required|integer'
+            'name' => 'required|string|min:2',
+            'description' => 'string'
         ];
     }
 }

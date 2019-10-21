@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Repositories\UserRepository;
+use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
 
 class UserRoleController extends Controller
@@ -48,7 +49,7 @@ class UserRoleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
         //
     }
@@ -84,7 +85,7 @@ class UserRoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserRequest $request, $id)
     {
         //
     }
