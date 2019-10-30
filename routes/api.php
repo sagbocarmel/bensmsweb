@@ -71,6 +71,61 @@ Route::middleware('auth:api')->group( function () {
         'as' => 'delete_user',
         'roles' => ['Admin'],
     ]);
+
+    /*
+    |--------------------------------------------------------------------------
+    | API Routes
+    |--------------------------------------------------------------------------
+    |
+    |SMS Ressources Routes
+    |
+    |
+    */
+
+    Route::get('bensms/sms',[
+        'uses' => 'SMSController@index',
+        'as' => 'list_all_sms',
+        'roles' => ['Admin'],
+    ]);
+
+    Route::post('bensms/sms',[
+        'uses' => 'SMSController@store',
+        'as' => 'create_sms',
+        'roles' => ['Admin','User'],
+    ]);
+
+    Route::get('bensms/sms/{id}',[
+        'uses' => 'SMSController@show',
+        'as' => 'get_sms',
+        'roles' => ['Admin','User'],
+    ]);
+
+    Route::put('bensms/sms/{id}',[
+        'uses' => 'SMSController@update',
+        'as' => 'update_update',
+        'roles' => ['Admin','User'],
+    ]);
+
+    Route::delete('bensms/sms/{id}',[
+        'uses' => 'SMSController@destroy',
+        'as' => 'delete_all_school_sms',
+        'roles' => ['Admin','User'],
+    ]);
+
+    /**
+     * To review About School Data
+     */
+    Route::get('bensms/sms/school/{id_school}',[
+        'uses' => 'SmsSchoolController@index',
+        'as' => 'list_all_sms_by_school',
+        'roles' => ['Admin','User'],
+    ]);
+
+    Route::delete('bensms/sms/school/{id_school}',[
+        'uses' => 'SmsSchoolController@destroy',
+        'as' => 'delete_all_school_sms',
+        'roles' => ['Admin','User'],
+    ]);
 });
 
 
