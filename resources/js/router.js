@@ -8,6 +8,7 @@ Vue.use(VueRouter);
 import Home from './components/home.vue';
 import About from "./components/About";
 import Login from "./components/Login";
+import AppDashboard from "./components/dashboard/AppDashboard"
 
 // 2. Définition des routes
 // Chaque route doit être mappée à un composant
@@ -20,12 +21,23 @@ const routes = [
     {
         path: '/sms/login',
         name: 'login',
-        component: Login
+        component: Login,
+        meta: {
+            auth: false
+        }
     },
     {
         path:'/sms/about',
         name: 'about',
         component: About
+    },
+    {
+        path: '/sms/dashboard',
+        name: 'dashboard',
+        component: AppDashboard,
+        meta:{
+            auth: true
+        }
     }
 ]
 

@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
         $user->school_name = 'Pere Aupiais Cadjehoun';
         $user->address = 'Cotonou';
         $user->phone_number = '+22967811382';
-        $user->password =  bcrypt('Yo8@&#my096+');
+        $user->password =  bcrypt('Carel12345');
         $user->save();
     }
 }

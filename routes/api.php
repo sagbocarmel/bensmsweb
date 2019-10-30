@@ -13,9 +13,15 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::fallback(function(){
+    return response()->json([
+        'message' => 'Page Not Found. If error persists, contact abc owner'], 404);
 });
+Route::post('bensms/admin/register', 'UserRoleController@store');
+
+Route::post('bensms/login', 'UserRoleController@login');
+
+Route::post('bensms/logout', 'UserRoleController@logoutApi');
 
 Route::middleware('auth:api')->group( function () {
 
@@ -30,12 +36,40 @@ Route::middleware('auth:api')->group( function () {
     */
     Route::post('logout','API\UserController@logoutApi');
 
-    Route::get('abc/users',[
-        'uses' => 'API\UserController@getList',
+    Route::get('bensms/users',[
+        'uses' => 'UserRoleController@index',
         'as' => 'list_users',
-        'middleware'=>['permissions'],
+        'roles' => ['Admin'],
+    ]);
+
+    Route::post('bensms/user',[
+        'uses' => 'UserRoleController@store',
+        'as' => 'create_user',
+        'roles' => ['Admin'],
+    ]);
+
+    Route::get('bensms/user/{id}',[
+        'uses' => 'UserRoleController@show',
+        'as' => 'get_users',
+        'roles' => ['Admin'],
+    ]);
+
+    Route::get('bensms/user',[
+        'uses' => 'UserRoleController@getUser',
+        'as' => 'find_user',
         'roles' => ['Admin','User'],
-        'elts' => ['48c5m_Utilisateur']
+    ]);
+
+    Route::put('bensms/user/{id}',[
+        'uses' => 'UserRoleController@update',
+        'as' => 'update_user',
+        'roles' => ['Admin'],
+    ]);
+
+    Route::delete('bensms/user/{id}',[
+        'uses' => 'UserRoleController@delete',
+        'as' => 'delete_user',
+        'roles' => ['Admin'],
     ]);
 });
 

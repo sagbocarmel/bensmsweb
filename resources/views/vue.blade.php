@@ -22,13 +22,6 @@
     <index></index>
 </div>
 
-<!-- Footer -->
-<footer class="py-5 bg-dark fixed-bottom">
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy;  {{ config('app.name', 'SMS Parent') }} 2019</p>
-    </div>
-    <!-- /.container -->
-</footer>
 <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>

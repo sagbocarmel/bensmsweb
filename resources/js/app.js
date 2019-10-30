@@ -6,6 +6,9 @@
 import 'es6-promise/auto'
 require('./bootstrap');
 import Vue from 'vue';
+// import axios from 'axios'
+// import VueAxios from 'vue-axios'
+
 import BootstrapVue from 'bootstrap-vue'// Importing Vue Library
 
 window.Vue = Vue;
@@ -15,8 +18,13 @@ import router from './router';
 Vue.use(VueRouter);
 Vue.use(BootstrapVue)
 
+// Vue.use(VueAxios, axios)
+//
+// axios.defaults.baseURL = 'http://127.0.0.1:8000/api';
+
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -28,6 +36,15 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+//
+// Vue.use(
+//     require('@websanova/vue-auth'),
+//     {
+//         auth: require('@websanova/vue-auth/drivers/auth/bearer.js'),
+//         http: require('@websanova/vue-auth/drivers/http/axios.1.x.js'),
+//         router: require('@websanova/vue-auth/drivers/router/vue-router.2.x.js'),
+//     }
+//     );
 
 Vue.component('index', require('./components/index.vue').default);
 
