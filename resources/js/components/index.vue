@@ -1,6 +1,22 @@
 <template>
     <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <nav v-if="dashboardHeader" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <router-link :to="'home'" class="navbar-brand" >SMS To Parent Dashboard</router-link>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarDashboard">
+                    <ul class="navbar-nav ml-auto">
+                        <li v-for="(route, key) in routes"  class="nav-item">
+                            <router-link  :to="{ name : route.path }" :key="key" class="nav-link" style="text-transform:capitalize;">{{route.name}}</router-link>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <nav v-if="noDashboardHeader" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
                 <router-link :to="'home'" class="navbar-brand" >SMS To Parent</router-link>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,7 +73,9 @@
                         name: 'A propos',
                         path: 'about'
                     }
-                ]
+                ],
+                dashboardHeader: false,
+                noDashboardHeader : true,
             }
         },
         mounted() {

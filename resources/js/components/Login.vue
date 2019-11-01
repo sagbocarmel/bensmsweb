@@ -101,7 +101,9 @@
                         this.form.user = res.data.data.user;
                         if(this.form.user.email == this.form.email){
                             // this.$router.push('dashboard')
-                            window.location.href = "/sms/dashboard"
+                            this.$parent.$data.dashboardHeader = true
+                            this.$parent.$data.noDashboardHeader = false
+                            router.push("dashboard")
                         }
                     }).catch((err) =>{
                         this.errored = true

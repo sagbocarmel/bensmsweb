@@ -13,7 +13,7 @@ import BootstrapVue from 'bootstrap-vue'// Importing Vue Library
 
 window.Vue = Vue;
 import VueRouter from 'vue-router'; // importing Vue router library
-import router from './router';
+// import router from './router';
 
 Vue.use(VueRouter);
 Vue.use(BootstrapVue)
@@ -56,5 +56,8 @@ Vue.component('index', require('./components/index.vue').default);
 
 const app = new Vue({
     el: '#app',
-    router
+    router,
+    data: {
+
+    }
 });
