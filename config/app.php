@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'SMS Parent'),
+    'name' => env('APP_NAME', 'SMS To Parent'),
 
     /*
     |--------------------------------------------------------------------------

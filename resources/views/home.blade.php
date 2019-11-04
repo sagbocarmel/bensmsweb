@@ -3,21 +3,14 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
+        <main role="main" class=" m-4 my-3 inner cover">
+            <h1 class="cover-heading">SMS planifié</h1>
+            <p class="lead">SMS To Parents permet de planifier et gérer l'envoie des SMS de notification aux parents d'élèves.
+                <br> Fournir une assistance de qualité aux parents c'est réaliser un bien-être de plus.</p>
+            <p class="lead">
+                <a href="{{url('/sms/parent/about')}}" class="btn btn-md btn-light text-primary">Voir plus</a>
+            </p>
+        </main>
     </div>
 </div>
 @endsection

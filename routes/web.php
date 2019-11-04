@@ -11,15 +11,23 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('vue');
-//});
-
-//Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/{any?}', function (){
-    return view('vue');
-})->where('any', '[\/\w\.-]*');
+Route::get('/', function () {
+    return view('home');
+});
 
 Auth::routes();
+
+Route::get('/sms/parent/about', function () {
+    return view('about');
+});
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::group(['middleware' => ['auth']], function (){
+
+    //Route::get('/home', 'HomeController@index')->name('dashboard');
+
+});
 
