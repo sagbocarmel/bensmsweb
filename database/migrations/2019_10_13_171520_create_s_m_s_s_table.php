@@ -25,7 +25,9 @@ class CreateSMSSTable extends Migration
             $table->unsignedInteger('nbr_page_sms')->nullable(true);
             $table->string('sms_price')->nullable(true);
             $table->unsignedInteger('sms_state');
+            $table->unsignedBigInteger('sms_school_user_id')->nullable(false);
             $table->timestamps();
+            $table->foreign('sms_school_user_id')->references('id')->on('users');
         });
     }
 

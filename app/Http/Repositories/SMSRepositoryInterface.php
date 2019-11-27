@@ -18,4 +18,19 @@ interface SMSRepositoryInterface
     public function find($id);
     public function delete($id);
     public function deleteAllBySchool($idSchool);
+
+    public function notSentSMS();
+    public function deliveredSMS();
+    public function scheduledSMS();
+    public function rejectedSMS();
+    public function inWaitingStateSMS();
+
+    public function notSentSMSBySchool($id_school);
+    public function deliveredSMSBySchool($id_school);
+    public function scheduledSMSBySchool($id_school);
+    public function rejectedSMSBySchool($id_school);
+    public function inWaitingStateSMSBySchool($id_school);
+
+    public function updateSMSState($id_sms, $state);
+    public function updateAfterSent($id,  array $inputs);
 }

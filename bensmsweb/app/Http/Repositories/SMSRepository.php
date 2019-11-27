@@ -10,23 +10,21 @@ namespace App\Http\Repositories;
 
 
 use App\SMS;
-use App\SmsSchool;
+use Illuminate\Support\Facades\Auth;
 
 class SMSRepository implements SMSRepositoryInterface
 {
 
     protected $sms;
-    protected $sms_school;
 
     /**
      * SMSRepository constructor.
      * @param SMS $sms
      * @param SmsSchool $sms_school
      */
-    public function __construct(SMS $sms, SmsSchool $sms_school)
+    public function __construct(SMS $sms)
     {
         $this->sms = $sms;
-        $this->sms_school = $sms_school;
     }
 
     /**
@@ -36,7 +34,6 @@ class SMSRepository implements SMSRepositoryInterface
     public function store(array $inputs)
     {
         $this->sms = new SMS();
-        $this->sms_school = new SmsSchool();
         $this->sms->sms_sender = $inputs['sms_sender'];
         $this->sms->sms_receiver = $inputs['sms_receiver'];
         $this->sms->student_matricule = $inputs['student_matricule'];
@@ -47,14 +44,9 @@ class SMSRepository implements SMSRepositoryInterface
         $this->sms->nbr_page_sms = $inputs['nbr_page_sms'];
         $this->sms->sms_price = $inputs['sms_price'];
         $this->sms->sms_state = $inputs['sms_state'];
+        $this->sms->sms_school_user_id = Auth::user()->id;
 
         $this->sms = $this->sms->save();
-
-        $this->sms_school->id_school = $inputs['id_school'];
-        $this->sms_school->id_sms = $this->sms->id;
-        $this->sms_school =  $this->sms_school->save();
-
-        return ['sms' => $this->sms, 'sms_school' => $this->sms_school];
     }
 
     /**
@@ -96,7 +88,7 @@ class SMSRepository implements SMSRepositoryInterface
      */
     public function findAllBySchool($idSchool)
     {
-        return $this->sms_school->hasMany();
+        return SMS::where('sms_school_user_id', $idSchool)->get();
     }
 
     /**
@@ -119,6 +111,6 @@ class SMSRepository implements SMSRepositoryInterface
 
     public function deleteAllBySchool($idSchool)
     {
-        $this->sms_school->smss()->delete();
+        SMS::where('sms_school_user_id', $idSchool)->delete();
     }
 }

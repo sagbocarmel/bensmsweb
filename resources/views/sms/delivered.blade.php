@@ -13,7 +13,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">SMS</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Liste des SMS</li>
+                            <li class="breadcrumb-item active" aria-current="page">SMS délivrés</li>
                         </ol>
                     </nav>
                 </div>
@@ -29,7 +29,7 @@
         <!-- ============================================================== -->
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
-                <h5 class="card-header">Liste des SMS</h5>
+                <h5 class="card-header">Liste des sms délivrés</h5>
                 @if (session('success'))
                     <div class="alert alert-success" role="alert" >
                         {{ session('success') }}
@@ -67,17 +67,7 @@
                                     <td>{{$sms->sms_price }}</td>
                                     <td>{{$sms->nbr_page_sms }}</td>
                                     <td>
-                                        @if($sms->sms_state == 0)
-                                            Rejeté
-                                        @elseif($sms->sms_state == 1)
-                                            En attente
-                                        @elseif($sms->sms_state == 2)
-                                            Programmé
-                                        @elseif($sms->sms_state == 3)
-                                            Délivré
-                                        @elseif($sms->sms_state == 6)
-                                            Non envoyé
-                                        @endif
+                                        Délivré
                                     </td>
                                 </tr>
                             @endforeach
@@ -89,3 +79,4 @@
         </div>
     </div>
 @endsection
+/

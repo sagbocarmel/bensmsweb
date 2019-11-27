@@ -29,7 +29,9 @@ class UserRequest extends FormRequest
             'school_name' => 'required|string|min:3',
             'address' => 'required|string',
             'phone_number' => 'required|string',
-            'password' => 'required|string|min:8'
+            'password' => 'required|string|min:8',
+            'confirm_password'=>'required|string|min:8',
+            'id_role' => 'required'
         ];
     }
 }

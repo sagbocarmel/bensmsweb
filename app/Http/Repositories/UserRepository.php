@@ -42,9 +42,11 @@ class UserRepository implements UserRepositoryInterface
         $this->user->address = $inputs['address'];
         $this->user->phone_number = $inputs['phone_number'];
         $this->user->password = bcrypt($inputs['password']);
-        $this->user = $this->user->save();
 
-        return $this->user;
+        if(!$this->user->save()){
+            return null;
+        }
+        return User::where('email',$inputs['email'])->first();
     }
 
     /**
@@ -62,9 +64,12 @@ class UserRepository implements UserRepositoryInterface
         $this->user->address = $inputs['address'];
         $this->user->phone_number = $inputs['phone_number'];
         $this->user->password = bcrypt($inputs['password']);
-        $this->user = $this->user->save();
+        $this->user->save();
 
-        return $this->user;
+        if(!$this->user->save()){
+            return null;
+        }
+        return User::where('email',$inputs['email'])->first();
     }
 
     /**
@@ -89,6 +94,7 @@ class UserRepository implements UserRepositoryInterface
      */
     public function delete($id)
     {
+        UserRole::where('user_id',$id)->delete();
         User::where('id',$id)->delete();
     }
 
@@ -104,9 +110,7 @@ class UserRepository implements UserRepositoryInterface
         $this->user_role->user_id = $user_id;
         $this->user_role->role_id = $role_id;
 
-        $this->user_role = $this->user_role->save();
-
-        return $this->user_role;
+        return $this->user_role->save();
     }
 
     /**
@@ -123,5 +127,42 @@ class UserRepository implements UserRepositoryInterface
         $this->user_role = $this->user_role->save();
 
         return $this->user_role;
+    }
+
+    public function findByData($email, $phone_number, $username)
+    {
+        $user1 = User::where('email',$email)->first();
+        $user2 = User::where('phone_number',$phone_number)->first();
+        $user3 = User::where('username',$username)->first();
+
+        if($user1 != null){
+            return 1;
+        }else if($user2 != null){
+            return 2;
+        }else if($user3 != null){
+             return 3;
+        }
+        return 0;
+
+    }
+
+    public function getRole($user_id){
+       return $this->user_role = UserRole::where('user_id', $user_id)->first();
+    }
+
+    public function findForUpdateByData($id, $email, $phone_number, $username)
+    {
+        $user1 = User::where('email',$email)->first();
+        $user2 = User::where('phone_number',$phone_number)->first();
+        $user3 = User::where('username',$username)->first();
+
+        if($user1 != null && $id != $user1->id){
+            return 1;
+        }else if($user2 != null && $id != $user2->id){
+            return 2;
+        }else if($user3 != null && $id != $user3->id){
+            return 3;
+        }
+        return 0;
     }
 }
