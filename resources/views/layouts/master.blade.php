@@ -9,10 +9,10 @@
             {{ config('app.name', 'SMS To Parent') }}
         - Admin Dashboard </title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}">
-    <link href="{{ asset('assets/vendor/fonts/circular-std/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/static/bootstrap/css/bootstrap.min.css') }}">
+    <link href="{{ asset('assets/static/fonts/circular-std/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/libs/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/fontawesome/css/fontawesome-all.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/static/fonts/fontawesome/css/fontawesome-all.css') }}">
 </head>
 <body>
 <!-- ============================================================== -->
@@ -173,9 +173,9 @@
 <!-- end main wrapper -->
 <!-- ============================================================== -->
 <!-- Optional JavaScript -->
-<script src="{{ asset('assets/vendor/jquery/jquery-3.3.1.min.js') }}"></script>
-<script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.js ') }}"></script>
-<script src="{{ asset('assets/vendor/slimscroll/jquery.slimscroll.js') }}"></script>
+<script src="{{ asset('assets/static/jquery/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ asset('assets/static/bootstrap/js/bootstrap.bundle.js ') }}"></script>
+<script src="{{ asset('assets/static/slimscroll/jquery.slimscroll.js') }}"></script>
 <script src="{{ asset('assets/libs/js/main-js.js') }}"></script>
 </body>
 
